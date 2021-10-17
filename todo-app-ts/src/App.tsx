@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { TodoList } from "./ToDoList";
-import { AddTodoForm } from "./AddToDoForm";
+import { TodoList } from "./ToDoList/ToDoList";
+import { AddTodoForm } from "./Form/AddToDoForm";
 
 const initialTodos: Array<ToDo> = [
-  { text: "walk the dog", complete: true },
-  { text: "write app", complete: false },
+  { text: "walk the dog", complete: true, isFilter: false, },
+  { text: "write app", complete: false, isFilter: false, },
 ];
 
 const App: React.FC = () => {
@@ -23,8 +23,8 @@ const App: React.FC = () => {
   };
 
   const addTodo: AddTodo = (newTodo) => {
-    newTodo.trim() !== " " &&
-      setTodos([...todos, { text: newTodo, complete: false }]);
+    newTodo.trim() !== "" &&
+      setTodos([...todos, { text: newTodo, complete: false, isFilter: false }]);
   };
   return (
     <React.Fragment>

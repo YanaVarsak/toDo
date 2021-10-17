@@ -18,6 +18,13 @@ export const AddTodoForm: React.FC<AddToDoFormProps> = ({addTodo}) => {
     <form>
       <input type="text" value={newTodo} onChange={handleChange} />
       <button type="submit" onClick={handleSubmit}> Add Todo</button>
+      <label>
+          <input type="checkbox" /> Показать фильтр
+
+          
+      </label>
     </form>
+
+    
   );
 };
